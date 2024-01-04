@@ -1,25 +1,27 @@
 //
-// Created by et018298 on 12/14/2023.
+// Created by et018298 on 1/4/2024.
 //
 
 #ifndef GRAPH_PUZZLE_GAME_EMIRHANTEMEL_EDGE_H
 #define GRAPH_PUZZLE_GAME_EMIRHANTEMEL_EDGE_H
+#include <string>
 
+using namespace std;
 
 class Edge {
 private:
-    int from;
-    int to;
-    int weight;
+    std::string from;
+    std::string to;
     Edge* next;
 public:
     Edge();
-    Edge(int from, int to, int weight);
     void setNext(Edge* _next);
     Edge* getNext() const;
-    int getFrom() const;
-    int getTo() const;
-    int getWeight() const;
+    std::string getFrom() const;
+    std::string getTo() const;
+
+    Edge(std::string from, std::string to);
 };
+
 
 #endif //GRAPH_PUZZLE_GAME_EMIRHANTEMEL_EDGE_H

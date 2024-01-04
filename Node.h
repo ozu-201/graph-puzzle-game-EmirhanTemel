@@ -1,5 +1,5 @@
 //
-// Created by et018298 on 12/14/2023.
+// Created by et018298 on 1/4/2024.
 //
 
 #ifndef GRAPH_PUZZLE_GAME_EMIRHANTEMEL_NODE_H
@@ -11,14 +11,13 @@ using namespace  std;
 
 class Node {
 private:
-    int data;
+    std::string data;
     Node* next;
 public:
-    explicit Node(int data);
+    explicit Node(std::string& data);
     void setNext(Node* _next);
     Node* getNext();
-    int getData();
+    std::string getData();
     string to_string();
 };
-
 #endif //GRAPH_PUZZLE_GAME_EMIRHANTEMEL_NODE_H

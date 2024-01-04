@@ -1,7 +1,6 @@
 //
-// Created by et018298 on 12/14/2023.
+// Created by et018298 on 1/4/2024.
 //
-
 #include "Queue.h"
 
 Queue::Queue() {
@@ -34,7 +33,7 @@ Node *Queue::dequeue() {
     return result;
 }
 
-void Queue::enqueue(Node *newNode) {
+void Queue::enqueue(Node newNode) {
     if (first == nullptr) {
         first = newNode;
     } else {

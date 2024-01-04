@@ -1,5 +1,5 @@
 //
-// Created by et018298 on 12/14/2023.
+// Created by et018298 on 1/4/2024.
 //
 
 #ifndef GRAPH_PUZZLE_GAME_EMIRHANTEMEL_EDGELIST_H
@@ -15,9 +15,9 @@ public:
     EdgeList();
     ~EdgeList();
     bool isEmpty() const;
-    Edge* search(int to) const;
     void insert(Edge* newEdge);
     Edge* getHead();
+    Edge *search(string to) const;
 };
 
 

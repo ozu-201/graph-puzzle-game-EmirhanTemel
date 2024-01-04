@@ -1,10 +1,9 @@
 //
-// Created by et018298 on 12/14/2023.
+// Created by et018298 on 1/4/2024.
 //
 
 #include "Node.h"
-
-Node::Node(int data) {
+Node::Node(std::string& data) {
     this->data = data;
     this->next = nullptr;
 }
@@ -17,7 +16,7 @@ Node *Node::getNext() {
     return next;
 }
 
-int Node::getData() {
+std::string Node::getData() {
     return data;
 }
 

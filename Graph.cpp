@@ -1,54 +1,45 @@
 //
-// Created by et018298 on 12/14/2023.
+// Created by et018298 on 1/4/2024.
 //
-
 #include "Graph.h"
-#include "Queue.h"
 
-Graph::Graph(int _vertexCount) : AbstractGraph(_vertexCount){
+Graph::Graph(int vertexCount){
+    this->vertexCount = vertexCount;
     edges = new EdgeList[vertexCount];
     for (int i = 0; i < vertexCount; i++) {
         edges[i] = EdgeList();
     }
 }
 
-void Graph::addEdge(int from, int to) {
-    Edge* edge = new Edge(from, to, 1);
+void Graph::addEdge(std::string from, std::string to) {
+    Edge* edge = new Edge(from, to);
     edges[from].insert(edge);
 }
 
 Graph::~Graph() {
     delete[] edges;
 }
-void Graph::depthFirstSearch(bool *visited, int fromNode) {
-    Edge* edge;
-    int toNode;
-    edge = edges[fromNode].getHead();
-    while (edge != nullptr){
-        toNode = edge->getTo();
-        if (!visited[toNode]){
-            visited[toNode] = true;
-            depthFirstSearch(visited, toNode);
-        }
-        edge = edge->getNext();
-    }
-}
 
-void Graph::breadthFirstSearch(bool *visited, int startNode) {
+void Graph::BFS(std::string& startingNode, std::string& endNode){
     Edge* edge;
-    int fromNode, toNode;
+    std::string fromNode, toNode;
+    bool *visited = new bool[vertexCount];
+    int distance = 0;
     Queue queue = Queue();
-    queue.enqueue(new Node(startNode));
-    while (!queue.isEmpty()){
+    queue.enqueue(Node(startingNode));
+    while (!queue.isEmpty()) {
         fromNode = queue.dequeue()->getData();
-        edge = edges[fromNode].getHead();
+        edge = edges[fromNode]->getHead();
         while (edge != nullptr) {
             toNode = edge->getTo();
-            if (!visited[toNode]){
+            if(!visited[toNode]) {
+                distance++;
                 visited[toNode] = true;
-                queue.enqueue(new Node(toNode));
+                queue.enqueue(Node(toNode));
             }
-            edge = edge->getNext();
+            edge = edge ->getNext();
         }
     }
+
+
 }

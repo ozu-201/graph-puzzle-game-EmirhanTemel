@@ -1,9 +1,8 @@
 //
-// Created by et018298 on 12/14/2023.
+// Created by et018298 on 1/4/2024.
 //
 
 #include "EdgeList.h"
-
 EdgeList::EdgeList() {
     head = nullptr;
     tail = nullptr;
@@ -23,7 +22,7 @@ bool EdgeList::isEmpty() const {
     return head == nullptr;
 }
 
-Edge *EdgeList::search(int to) const{
+Edge *EdgeList::search(std::string to) const{
     Edge* tmp = head;
     while (tmp != nullptr) {
         if (to == tmp->getTo()) {
